@@ -22,6 +22,8 @@ if (toggleClose) {
 // Generate category slug
 var categoryInput = document.getElementById('category');
 var categorySlugInput = document.getElementById('category_slug');
+var tagInput = document.getElementById('tag');
+var tagSlugInput = document.getElementById('tag_slug');
 
 function generateSlug(str) {
     return str
@@ -36,5 +38,12 @@ if (categoryInput && categorySlugInput) {
     categoryInput.addEventListener('input', function () {
         var slug = generateSlug(categoryInput.value);
         categorySlugInput.value = slug;
+    });
+}
+
+if (tagInput && tagSlugInput) {
+    tagInput.addEventListener('input', function () {
+        var slug = generateSlug(tagInput.value);
+        tagSlugInput.value = slug;
     });
 }
