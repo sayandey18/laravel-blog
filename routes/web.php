@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +31,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/categories', function () {
-    return view('categories.index');
-})->middleware(['auth', 'verified'])->name('categories');
+Route::middleware('auth')->group(function () {
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
+    Route::post('/tags', [TagController::class, 'store'])->name('tags.store');
+    Route::delete('/tags/{id}', [TagController::class, 'destroy'])->name('tags.destroy');
+});
 
 require __DIR__.'/auth.php';
