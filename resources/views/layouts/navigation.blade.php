@@ -45,17 +45,16 @@
                     </a>
                 </li>
                 <li>
-                    <x-nav-link :href="route('categories')" :active="request()->routeIs('categories')">
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
                         <x-tabler-category class="w-5 h-5 mr-4" />
                         <span>{{ __('Categories') }}</span>
                     </x-nav-link>
                 </li>
                 <li>
-                    <a href="javascript:void(0)"
-                        class="text-sm flex items-center text-gray-500 hover:text-blue-600 transition-all">
+                    <x-nav-link :href="route('tags.index')" :active="request()->routeIs('tags.index')">
                         <x-tabler-tag class="w-5 h-5 mr-4" />
                         <span>{{ __('Tags') }}</span>
-                    </a>
+                    </x-nav-link>
                 </li>
                 <li>
                     <a href="javascript:void(0)"
@@ -70,11 +69,10 @@
         <div class="mt-4">
             <ul class="space-y-4 px-2">
                 <li>
-                    <a href="{{ route('profile.edit') }}"
-                        class="text-sm flex items-center text-gray-500 hover:text-blue-600 transition-all">
+                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
                         <x-tabler-user-circle class="w-5 h-5 mr-4" />
                         <span>{{ __('Profile') }}</span>
-                    </a>
+                    </x-nav-link>
                 </li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
