@@ -38,11 +38,10 @@
             <h4 class="text-sm text-gray-400 mb-4">{{ __('Media') }}</h4>
             <ul class="space-y-4 px-2 flex-1">
                 <li>
-                    <a href="javascript:void(0)"
-                        class="text-sm flex items-center text-gray-500 hover:text-blue-600 transition-all">
+                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                         <x-tabler-file-dots class="w-5 h-5 mr-4" />
                         <span>{{ __('Posts') }}</span>
-                    </a>
+                    </x-nav-link>
                 </li>
                 <li>
                     <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">

@@ -6,8 +6,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Style -->
+        @vite(['resources/css/app.css'])
+        @stack('style')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -23,5 +24,9 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <!-- Script -->
+        @vite(['resources/js/app.js'])
+        @stack('scripts')
     </body>
 </html>

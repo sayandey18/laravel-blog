@@ -36,7 +36,7 @@
                 <div class="flex items-center ml-auto space-x-6">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/dashboard') }}">
+                            <a href="{{ route('dashboard') }}">
                                 <span class="inline-block px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]">
                                     {{ __('Dashboard') }}
                                 </span>
