@@ -6,3 +6,12 @@
 body {
     font-family: 'Akshar', sans-serif;
 }
+
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+    height: 300px;
+    overflow-y: auto;
+}
+
+.ck-content.ck-editor__editable > * {
+    margin-bottom: 10px;
+}
